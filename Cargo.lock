@@ -6,12 +6,16 @@ version = 4
 name = "DeSS"
 version = "0.1.0"
 dependencies = [
+ "anyhow",
  "eframe",
  "egui",
  "egui_extras",
  "env_logger",
+ "home",
+ "once_cell",
  "reqwest",
  "serde",
+ "serde_json",
  "tokio",
 ]
 
@@ -245,6 +249,12 @@ dependencies = [
  "once_cell",
  "windows-sys 0.59.0",
 ]
+
+[[package]]
+name = "anyhow"
+version = "1.0.97"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "dcfed56ad506cb2c684a14971b8861fdc3baaaae314b9e5f9bb532cbe3ba7a4f"
 
 [[package]]
 name = "arboard"

@@ -1,6 +1,7 @@
 mod app;
 mod ui;
 mod state;
+mod backend;
 
 use crate::ui::constants::{DIS_APP_NAME, DIM_WINDOW};
 
