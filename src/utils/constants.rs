@@ -12,5 +12,5 @@ pub const DIS_VIEW_TRANSFERT : &str = "Transfert";
 
 // IPFS config --------------------------------------------
 
-pub const IPFS_CONFIG_PATH_MAIN_SUFF : &str = "/.ipfs";
-pub const IPFS_CONFIG_PATH_CONFIG_SUFF : &str = "/.ipfs/config";
+pub const IPFS_CONFIG_PATH_MAIN_SUFF : &str = ".ipfs";
+pub const IPFS_CONFIG_PATH_CONFIG_SUFF : &str = ".ipfs/config";
