@@ -11,7 +11,7 @@ pub struct SettingsState {
 impl SettingsState {
     pub fn new() -> Self {
         Self {
-            edited_storage: load_storage_max().unwrap_or_else(|_| "10GB".to_string()),
+            edited_storage: load_storage_max().unwrap_or_else(|_| "0".to_string()),
             status: None,
         }
     }
@@ -26,7 +26,7 @@ pub fn show(ui: &mut Ui) {
     let mut state = SETTINGS_STATE.lock().unwrap();
 
     ui.heading("Paramètres IPFS");
-
+    ui.separator();
     if let Some(msg) = &state.status {
         ui.colored_label(egui::Color32::from_rgb(220, 100, 100), msg);
     }
@@ -35,12 +35,12 @@ pub fn show(ui: &mut Ui) {
     ui.add(TextEdit::singleline(&mut state.edited_storage).hint_text("Ex: 10GB"));
 
     ui.horizontal(|ui| {
-        if ui.button("💾 Sauvegarder").clicked() {
+        if ui.button("Sauvegarder").clicked() {
             let new_value = state.edited_storage.clone();
 
             match save_storage_max(&new_value) {
-                Ok(_) => state.status = Some("✅ Sauvegardé avec succès".to_string()),
-                Err(e) => state.status = Some(format!("❌ Erreur: {}", e)),
+                Ok(_) => state.status = Some("Sauvegardé avec succès".to_string()),
+                Err(e) => state.status = Some(format!("Erreur: {}", e)),
             }
         }
 
@@ -48,10 +48,10 @@ pub fn show(ui: &mut Ui) {
             match load_storage_max() {
                 Ok(value) => {
                     state.edited_storage = value;
-                    state.status = Some("⏪ Modifications annulées".into());
+                    state.status = Some("Modifications annulées".into());
                 }
                 Err(e) => {
-                    state.status = Some(format!("❌ Erreur lors de l'annulation: {}", e));
+                    state.status = Some(format!("Erreur lors de l'annulation: {}", e));
                 }
             }
         }

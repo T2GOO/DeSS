@@ -3,4 +3,3 @@ pub mod dashboard;
 pub mod explorer;
 pub mod settings;
 pub mod transfert;
-pub mod constants;

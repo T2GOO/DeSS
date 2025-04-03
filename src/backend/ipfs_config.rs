@@ -3,9 +3,10 @@ use std::path::PathBuf;
 use serde_json::Value;
 use anyhow::{Result, Context};
 use home;
+use crate::utils::constants::IPFS_CONFIG_PATH_CONFIG_SUFF;
 
 pub fn get_config_path() -> PathBuf {
-    home::home_dir().unwrap().join(".ipfs/config")
+    home::home_dir().unwrap().join(IPFS_CONFIG_PATH_CONFIG_SUFF)
 }
 
 pub fn load_storage_max() -> Result<String> {
