@@ -31,7 +31,6 @@ pub fn show(ui: &mut Ui) {
     let mut state = SETTINGS_STATE.lock().unwrap();
 
     ui.heading("Paramètres IPFS");
-    ui.separator();
     if let Some(msg) = &state.status {
         ui.colored_label(egui::Color32::from_rgb(100, 250, 100), msg);
     }

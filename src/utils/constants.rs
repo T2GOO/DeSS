@@ -14,3 +14,7 @@ pub const DIS_VIEW_TRANSFERT : &str = "Transfert";
 
 pub const IPFS_CONFIG_PATH_MAIN_SUFF : &str = ".ipfs";
 pub const IPFS_CONFIG_PATH_CONFIG_SUFF : &str = ".ipfs/config";
+pub const IPFS_CONFIG_PATH_SWARM_SUFF : &str = ".ipfs/swarm.key";
+
+pub const SWARM_KEY_PREFIX : &str = "/key/swarm/psk/1.0.0/\n/base16/\n";
+pub const SIZE_SWARM_KEY : usize = 32;
