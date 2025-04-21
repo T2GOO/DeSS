@@ -1,0 +1,6 @@
+db_path = ".internal/main.db"
+registry_path = ".internal/registry"
+key_path = ".internal/key.bin"
+api_port = 8080
+mode = "dev"
+user_path = ".internal/user.toml"

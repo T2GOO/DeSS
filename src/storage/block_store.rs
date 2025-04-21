@@ -21,6 +21,16 @@ impl fmt::Debug for BlockStore {
     }
 }
 
+impl Clone for BlockStore {
+    fn clone(&self) -> Self {
+        Self {
+            db: self.db.clone(),
+            crypto: self.crypto.clone(),
+            _lock_file: self._lock_file.try_clone().unwrap(),
+        }
+    }
+}
+
 impl BlockStore {
     pub fn new(path: impl AsRef<Path>, crypto: CryptoEngine) -> Result<Self, Box<dyn Error>> {
         if !crypto.get_secure() {

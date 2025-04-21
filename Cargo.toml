@@ -1,5 +1,5 @@
 [package]
-name = "DeSS"
+name = "dess"
 version = "0.1.0"
 edition = "2024"
 
@@ -10,6 +10,9 @@ aead = "0.5"
 rand = "0.8"
 fs2 = "0.4.3"
 sled = "0.34"
+serde = {version = "1.0.219", features = ["derive"]}
+toml = "0.8.20"
+libp2p = "0.55.0"
 
 [lib]
 path = "src/lib.rs"
