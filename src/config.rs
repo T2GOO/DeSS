@@ -12,6 +12,15 @@ pub struct MainConfig {
     pub key_path: String,
     pub api_port: u16,
     pub mode: String, // "dev", "prod", "test"...
+    pub p2p_path: String,
+}
+
+impl MainConfig {
+    pub fn load() -> Result<Self, Box<dyn Error>> {
+        let raw = fs::read_to_string("config.toml")?;
+        let config: MainConfig = toml::from_str(&raw)?;
+        Ok(config)
+    }
 }
 
 #[derive(Debug, Deserialize, Serialize, Clone)]
@@ -62,10 +71,3 @@ impl User {
     }
 }
 
-impl MainConfig {
-    pub fn load() -> Result<Self, Box<dyn Error>> {
-        let raw = fs::read_to_string("config.toml")?;
-        let config: MainConfig = toml::from_str(&raw)?;
-        Ok(config)
-    }
-}

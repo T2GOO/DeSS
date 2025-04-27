@@ -1,0 +1,77 @@
+/* Empêche tout scroll sur la page */
+html, body {
+  height: 100%;
+  overflow: hidden; /* ← ça empêche le scroll */
+}
+
+/* Le conteneur racine React */
+#root {
+  height: 100%;
+}
+
+/* La base de ton layout React */
+.gradient-background {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background:
+    linear-gradient(rgb(118, 181, 237), rgb(16, 132, 226));
+  position: relative;
+}
+
+/* Header fixe */
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.0);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  color: black;
+  z-index: 10;
+}
+
+/* Layout principal */
+.layout-container {
+  display: flex;
+  flex: 1;
+  height: 100%;
+  padding-top: 60px; /* compense le header */
+  overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 150px;
+  background-color: rgba(255, 255, 255, 0.0);
+  height: calc(100vh - 60px);
+  color: black;
+  padding: 2rem 1rem;
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+/* Contenu principal */
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.0);
+  color: black;
+  overflow: hidden;
+  border-top-left-radius: 20px;
+}
+
+.current-content {
+  display: flex;
+  background-color: rgba(255, 255, 255, 1.0);
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto; /* Permet le scroll uniquement sur le contenu principal */
+  border-radius: 20px;
+}

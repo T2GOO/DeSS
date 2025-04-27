@@ -5,6 +5,7 @@ pub mod storage;
 pub mod registry;
 pub mod security;
 pub mod core;
+pub mod network;
 
 use core::boot::boot_server;
 

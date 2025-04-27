@@ -12,7 +12,10 @@ fs2 = "0.4.3"
 sled = "0.34"
 serde = {version = "1.0.219", features = ["derive"]}
 toml = "0.8.20"
-libp2p = "0.55.0"
+libp2p = { version = "0.55", features = ["tcp", "dns", "request-response", "identify", "noise", "yamux", "tokio", "kad", "cbor"] }
+clap = "4.5.37"
+futures = "0.3.31"
+tracing-subscriber = {version = "0.3.19", features = ["env-filter"]}
 
 [lib]
 path = "src/lib.rs"
